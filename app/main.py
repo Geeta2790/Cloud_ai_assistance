@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from app.routes.requests import router as requests_router
+from app.routes.service_requests import router as service_requests_router
+
 
 app = FastAPI(
     title="Cloud AI Assistant",
@@ -15,3 +17,4 @@ def health_check() -> dict[str, str]:
 
 
 app.include_router(requests_router)
+app.include_router(service_requests_router)
